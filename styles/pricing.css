@@ -1,5 +1,5 @@
 .pricing {
-  border: 1px solid blue;
+  /* border: 1px solid blue; */
   background-image: url(../assets/pricing-background.png);
   width: 100%;
   height: 77.125rem;
@@ -10,7 +10,6 @@
 
   & .pricing-title {
     margin-top: 12.125rem;
-    border: 1px solid yellow;
     font: var(--title-sm);
     color: var(--text-title);
   }
@@ -18,7 +17,7 @@
 
 .pricing-cards {
   position: relative;
-  border: 1px solid rgb(197, 37, 98);
+  /* border: 1px solid rgb(197, 37, 98); */
   display: flex;
   width: 65.625rem;
   height: 37.875rem;
@@ -42,8 +41,10 @@
   background: var(--shape-base);
   border: 1px solid var(--shape-stroke);
   border-radius: 24px;
-  transform: rotate(-8deg);
 
+  transition: background 0.3s ease-in-out, transform 0.3s ease-out,
+    box-shadow 0.3s ease-in-out;
+  transform: rotate(-8deg);
 }
 
 .monthly-card-header {
@@ -148,6 +149,9 @@
 
 .monthly-card:hover {
   background: var(--shape-hover);
+  transform: rotate(-8deg) translateY(-5px);
+  box-shadow: 0px 0px 66px rgba(53, 139, 185, 0.1);
+  z-index: 2;
 }
 
 .yearly-card {
@@ -166,11 +170,16 @@
   border: 1px solid var(--shape-stroke);
   border-radius: 24px;
   transform: rotate(8deg);
+  transition: background 0.3s ease-in-out, transform 0.3s ease-out,
+    box-shadow 0.3s ease-in-out;
 }
 
 .yearly-card:hover {
-    background: var(--shape-hover);
-  }
+  background: var(--shape-hover);
+  transform: rotate(8deg) translateY(-5px);
+  box-shadow: 0px 0px 66px rgba(53, 139, 185, 0.1);
+  z-index: 1;
+}
 
 .monthly-star-big {
   position: absolute;
@@ -179,7 +188,8 @@
   left: calc(50% - 26px / 2 - 471.14px);
   top: calc(50% - 26px / 2 - 155px);
 
-  transform: matrix(0.99, -0.14, -0.14, -0.99, 0, 0);
+  transform: rotate(-8deg);
+  transition: transform 0.3s ease-in-out;
 }
 .monthly-star-small {
   position: absolute;
@@ -188,8 +198,20 @@
   left: calc(50% - 13.06px / 2 - 483.03px);
   top: calc(50% - 13.06px / 2 - 120px);
 
-  transform: matrix(0.99, -0.14, -0.14, -0.99, 0, 0);
+  transform: rotate(-8deg);
+  transition: transform 0.3s ease-in-out;
 }
+
+.monthly-card:hover ~ .monthly-star-big {
+  transform: rotate(-18deg);
+  transition: transform 0.3s ease-in-out;
+}
+
+.monthly-card:hover ~ .monthly-star-small {
+  transform: rotate(2deg);
+  transition: transform 0.3s ease-in-out;
+}
+
 .yearly-star-big {
   position: absolute;
   width: 23.22px;
@@ -197,7 +219,8 @@
   left: calc(50% - 23.22px / 2 + 428.72px);
   top: calc(50% - 23.22px / 2 + 280px);
 
-  transform: matrix(0.99, 0.14, 0.14, -0.99, 0, 0);
+  transform: rotate(-8deg);
+  transition: transform 0.3s ease-in-out;
 }
 .yearly-star-small {
   position: absolute;
@@ -206,9 +229,115 @@
   left: calc(50% - 11.25px / 2 + 391.16px);
   top: calc(50% - 11.25px / 2 + 288px);
 
-  transform: matrix(0.99, 0.14, 0.14, -0.99, 0, 0);
+  transform: rotate(-8deg);
+  transition: transform 0.3s ease-in-out;
+}
+
+.yearly-card:hover ~ .yearly-star-big {
+  transform: rotate(-18deg);
+  transition: transform 0.3s ease-in-out;
+}
+
+.yearly-card:hover ~ .yearly-star-small {
+  transform: rotate(2deg);
+  transition: transform 0.3s ease-in-out;
+}
+
+.semi-annual-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 32px 32px 28px;
+  gap: 56px;
+  isolation: isolate;
+  border: 1px solid var(--shape-stroke);
+  z-index: 1;
+
+  position: absolute;
+  width: 288px;
+  height: 416px;
+  left: calc(50% - 288px / 2 + 0.43px);
+  top: calc(50% - 416px / 2 - 12.91px);
+
+  background: #001933;
+  border-radius: 24px;
+
+  transition: background 0.3s ease-in-out, transform 0.3s ease-out,
+    box-shadow 0.3s ease-in-out;
+}
+
+.semi-annual-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 0px 66px rgba(53, 139, 185, 0.1);
+}
+
+.semi-annual-card-details-btn {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 14rem;
+  height: 2.5rem;
+  background: var(--pink-dark);
+  border-radius: 0.5rem;
+  overflow: hidden;
+
+  & p {
+    font: var(--button);
+    color: var(--text-title);
+    z-index: 1;
+  }
+}
+
+.semi-annual-card-details-btn::before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  background: radial-gradient(circle, var(--pink-base) 0%, transparent 100%);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.3s ease-out, height 0.5s ease-out;
+  border-radius: 50%;
+}
+
+.semi-annual-card-details-btn:hover::before {
+  width: 150%;
+  height: 150%;
+}
+
+.semi-annual-card-header-title {
+  font: var(--title-xs);
+  color: var(--pink-light);
+}
+
+.popular {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 9px 20px;
+
+  position: absolute;
+  width: 90px;
+  height: 30px;
+  right: 24.43px;
+  top: 23.91px;
+
+  background: var(--shape-stroke);
+  border-radius: 999px;
+
+  & p {
+    font: var(--tag);
+    color: var(--text-body);
+  }
 }
 
 .bunny {
   position: absolute;
+  width: 45.05px;
+  height: 49.93px;
+  left: 32px;
+  top: -50.19px;
 }

@@ -41,7 +41,7 @@
 
   --button: 600 0.875rem var(--ff-raleway);
   --link: 500 0.875rem var(--ff-raleway);
-  --link: 600 0.625rem var(--ff-raleway);
+  --tag: 600 0.625rem var(--ff-raleway);
 }
 
 body {
