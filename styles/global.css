@@ -27,10 +27,10 @@
 
   --ff-raleway: "Raleway", sans-serif;
 
-  --title-lg: 600 3rem var(--ff-raleway);
-  --title-md: 600 2.5rem var(--ff-raleway);
-  --title-sm: 600 2rem var(--ff-raleway);
-  --title-xs: 600 1rem var(--ff-raleway);
+  --title-lg: 700 3rem var(--ff-raleway);
+  --title-md: 700 2.5rem var(--ff-raleway);
+  --title-sm: 700 2rem var(--ff-raleway);
+  --title-xs: 700 1rem var(--ff-raleway);
 
   --subtitle: 500 2rem/2 var(--ff-raleway);
 
@@ -42,4 +42,19 @@
   --button: 600 0.875rem var(--ff-raleway);
   --link: 500 0.875rem var(--ff-raleway);
   --link: 600 0.625rem var(--ff-raleway);
+}
+
+body {
+  background-color: var(--shape-background);
+  display: flex;
+  justify-content: center;
+  overflow-x: hidden;
+}
+
+.container {
+  position: relative;
+  border: 1px solid red;
+  display: flex;
+  flex-direction: column;
+  width: 90rem;
 }
