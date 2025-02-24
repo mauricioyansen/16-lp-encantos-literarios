@@ -191,21 +191,29 @@
   position: absolute;
   width: 26px;
   height: 26px;
-  left: calc(50% - 26px / 2 - 471.14px);
-  top: calc(50% - 26px / 2 - 155px);
+  /* left: calc(50% - 26px / 2 - 471.14px);
+  top: calc(50% - 26px / 2 - 155px); */
+
+  left: calc(50% - 26px / 2 - 170px); /* left -300*/
+  top: calc(50% - 26px / 2 - 220px); /* top +65*/
 
   transform: rotate(-8deg);
   transition: transform 0.3s ease-in-out;
+  transition: all 0.5s ease-in-out;
 }
 .monthly-star-small {
   position: absolute;
   width: 13.06px;
   height: 13.06px;
-  left: calc(50% - 13.06px / 2 - 483.03px);
-  top: calc(50% - 13.06px / 2 - 120px);
+  /* left: calc(50% - 13.06px / 2 - 483.03px);
+  top: calc(50% - 13.06px / 2 - 120px); */
+
+  left: calc(50% - 13.06px / 2 - 183.03px);
+  top: calc(50% - 13.06px / 2 - 185px);
 
   transform: rotate(-8deg);
   transition: transform 0.3s ease-in-out;
+  transition: all 0.5s ease-in-out;
 }
 
 .monthly-card:hover ~ .monthly-star-big {
@@ -222,21 +230,23 @@
   position: absolute;
   width: 23.22px;
   height: 23.22px;
-  left: calc(50% - 23.22px / 2 + 428.72px);
-  top: calc(50% - 23.22px / 2 + 280px);
+  left: calc(50% - 23.22px / 2 + 160px); 
+  top: calc(50% - 23.22px / 2 + 215px); 
 
   transform: rotate(-8deg);
   transition: transform 0.3s ease-in-out;
+  transition: all 0.5s ease-in-out;
 }
 .yearly-star-small {
   position: absolute;
   width: 11.25px;
   height: 11.25px;
-  left: calc(50% - 11.25px / 2 + 391.16px);
-  top: calc(50% - 11.25px / 2 + 288px);
+  left: calc(50% - 11.25px / 2 + 123px);
+  top: calc(50% - 11.25px / 2 + 223px);
 
   transform: rotate(-8deg);
   transition: transform 0.3s ease-in-out;
+  transition: all 0.5s ease-in-out;
 }
 
 .yearly-card:hover ~ .yearly-star-big {
@@ -348,42 +358,61 @@
   top: -50.19px;
 }
 
+.pricing:hover .semi-annual-card:hover {
+  background: var(--shape-hover);
+  transform: translateY(-5px);
+  box-shadow: 0px 0px 66px rgba(53, 139, 185, 0.1);
+  z-index: 1;
+}
 
-.pricing-cards:hover .semi-annual-card:hover {
-    background: var(--shape-hover);
-    transform: translateY(-5px);
-    box-shadow: 0px 0px 66px rgba(53, 139, 185, 0.1);
-    z-index: 1;
-  }
+.pricing:hover .monthly-card:hover {
+  background: var(--shape-hover);
+  transform: rotate(-8deg) translateY(-5px);
+  box-shadow: 0px 0px 66px rgba(53, 139, 185, 0.1);
+  z-index: 2;
+}
 
-.pricing-cards:hover .monthly-card:hover {
-    background: var(--shape-hover);
-    transform: rotate(-8deg) translateY(-5px);
-    box-shadow: 0px 0px 66px rgba(53, 139, 185, 0.1);
-    z-index: 2;
-  }
-
-.pricing-cards:hover .monthly-card {
+.pricing:hover .monthly-card {
   left: calc(50% - 288px / 2 - 290px);
   top: calc(50% - 416px / 2 + 45px);
   transform: rotate(-8deg);
 }
 
-.pricing-cards:hover .yearly-card:hover {
+.pricing:hover .yearly-card:hover {
   background: var(--shape-hover);
   transform: rotate(8deg) translateY(-5px);
   box-shadow: 0px 0px 66px rgba(53, 139, 185, 0.1);
   z-index: 1;
 }
 
-.pricing-cards:hover .yearly-card {
+.pricing:hover .yearly-card {
   left: calc(50% - 288px / 2 + 290px);
   top: calc(50% - 416px / 2 + 45px);
   transform: rotate(8deg);
 }
 
-.pricing-cards:hover .semi-annual-card {
+.pricing:hover .semi-annual-card {
   left: calc(50% - 288px / 2 + 0.43px);
   top: calc(50% - 416px / 2 - 12.91px);
   transform: rotate(0deg);
+}
+
+.pricing:hover .monthly-star-big {
+  left: calc(50% - 26px / 2 - 471.14px);
+  top: calc(50% - 26px / 2 - 155px);
+}
+
+.pricing:hover .monthly-star-small {
+  left: calc(50% - 13.06px / 2 - 483.03px);
+  top: calc(50% - 13.06px / 2 - 120px);
+}
+
+.pricing:hover .yearly-star-big {
+  left: calc(50% - 23.22px / 2 + 428.72px);
+  top: calc(50% - 23.22px / 2 + 280px);
+}
+
+.pricing:hover .yearly-star-small {
+  left: calc(50% - 11.25px / 2 + 391.16px);
+  top: calc(50% - 11.25px / 2 + 288px);
 }
