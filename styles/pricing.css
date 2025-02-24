@@ -1,0 +1,214 @@
+.pricing {
+  border: 1px solid blue;
+  background-image: url(../assets/pricing-background.png);
+  width: 100%;
+  height: 77.125rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+
+  & .pricing-title {
+    margin-top: 12.125rem;
+    border: 1px solid yellow;
+    font: var(--title-sm);
+    color: var(--text-title);
+  }
+}
+
+.pricing-cards {
+  position: relative;
+  border: 1px solid rgb(197, 37, 98);
+  display: flex;
+  width: 65.625rem;
+  height: 37.875rem;
+  margin-top: 3.5rem;
+}
+
+.monthly-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 32px 32px 28px;
+  gap: 56px;
+
+  position: absolute;
+  width: 288px;
+  height: 416px;
+  left: calc(50% - 288px / 2 - 290px);
+  top: calc(50% - 416px / 2 + 45px);
+
+  background: var(--shape-base);
+  border: 1px solid var(--shape-stroke);
+  border-radius: 24px;
+  transform: rotate(-8deg);
+
+}
+
+.monthly-card-header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.5rem;
+
+  & .monthly-card-header-title {
+    font: var(--title-xs);
+    color: var(--blue-light);
+  }
+
+  & .monthly-card-header-pricing {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+
+    & .monthly-price {
+      font: var(--title-md);
+      color: var(--text-title);
+
+      & small {
+        font: var(--title-xs);
+      }
+    }
+
+    & .yearly-price {
+      font: var(--body-sm);
+      color: var(--text-label);
+    }
+  }
+}
+
+.monthly-card-details {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.5rem;
+
+  & .monthly-card-details-items {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+
+    & .item {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 0.5rem;
+
+      & img {
+        width: 0.875rem;
+        height: 0.875rem;
+      }
+
+      & p {
+        font: var(--body-xs);
+        color: var(--text-body);
+      }
+    }
+  }
+
+  & .monthly-card-details-btn {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 14rem;
+    height: 2.5rem;
+    background: var(--blue-dark);
+    border-radius: 0.5rem;
+    overflow: hidden;
+
+    & p {
+      font: var(--button);
+      color: var(--text-title);
+      z-index: 1;
+    }
+  }
+
+  .monthly-card-details-btn::before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    background: radial-gradient(circle, var(--blue-mid) 0%, transparent 100%);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.3s ease-out, height 0.5s ease-out;
+    border-radius: 50%;
+  }
+
+  .monthly-card-details-btn:hover::before {
+    width: 150%;
+    height: 150%;
+  }
+}
+
+.monthly-card:hover {
+  background: var(--shape-hover);
+}
+
+.yearly-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 32px 32px 28px;
+
+  position: absolute;
+  width: 288px;
+  height: 416px;
+  left: calc(50% - 288px / 2 + 290px);
+  top: calc(50% - 416px / 2 + 45px);
+
+  background: var(--shape-base);
+  border: 1px solid var(--shape-stroke);
+  border-radius: 24px;
+  transform: rotate(8deg);
+}
+
+.yearly-card:hover {
+    background: var(--shape-hover);
+  }
+
+.monthly-star-big {
+  position: absolute;
+  width: 26px;
+  height: 26px;
+  left: calc(50% - 26px / 2 - 471.14px);
+  top: calc(50% - 26px / 2 - 155px);
+
+  transform: matrix(0.99, -0.14, -0.14, -0.99, 0, 0);
+}
+.monthly-star-small {
+  position: absolute;
+  width: 13.06px;
+  height: 13.06px;
+  left: calc(50% - 13.06px / 2 - 483.03px);
+  top: calc(50% - 13.06px / 2 - 120px);
+
+  transform: matrix(0.99, -0.14, -0.14, -0.99, 0, 0);
+}
+.yearly-star-big {
+  position: absolute;
+  width: 23.22px;
+  height: 23.22px;
+  left: calc(50% - 23.22px / 2 + 428.72px);
+  top: calc(50% - 23.22px / 2 + 280px);
+
+  transform: matrix(0.99, 0.14, 0.14, -0.99, 0, 0);
+}
+.yearly-star-small {
+  position: absolute;
+  width: 11.25px;
+  height: 11.25px;
+  left: calc(50% - 11.25px / 2 + 391.16px);
+  top: calc(50% - 11.25px / 2 + 288px);
+
+  transform: matrix(0.99, 0.14, 0.14, -0.99, 0, 0);
+}
+
+.bunny {
+  position: absolute;
+}

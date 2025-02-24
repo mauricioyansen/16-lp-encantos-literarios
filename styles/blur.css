@@ -1,4 +1,4 @@
-.blur {
+.blur-hero {
   position: absolute;
   bottom: initial;
   width: 120rem;
@@ -48,4 +48,25 @@
   top: 0;
   background: var(--pink-low);
   filter: blur(234px);
+}
+
+.blur-about {
+  position: absolute;
+  width: 58.125rem;
+  height: 58.125rem;
+  margin-top: 123.125rem;
+  background: var(--pink-low);
+  opacity: 0.5;
+  border-radius: 50%;
+  filter: blur(300px);
+}
+
+.blur-pricing {
+  position: absolute;
+  width: 59rem;
+  height: 59rem;
+  margin-top: 205.6875rem;
+  background: #000f1f;
+  border-radius: 50%;
+  filter: blur(284px);
 }

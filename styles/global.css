@@ -48,7 +48,6 @@ body {
   background-color: var(--shape-background);
   display: flex;
   justify-content: center;
-  overflow-x: hidden;
 }
 
 .container {

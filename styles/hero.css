@@ -1,4 +1,5 @@
 .hero {
+  /* border: 1px solid lime; */
   background-image: url(../assets/hero-background.png);
   background-size: auto 60rem;
   background-position: top;
