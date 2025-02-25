@@ -44,6 +44,10 @@
   --tag: 600 0.625rem var(--ff-raleway);
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background-color: var(--shape-background);
   display: flex;
@@ -52,7 +56,6 @@ body {
 
 .container {
   position: relative;
-  border: 1px solid red;
   display: flex;
   flex-direction: column;
   width: 90rem;
